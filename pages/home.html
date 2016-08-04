@@ -1,0 +1,22 @@
+<div class="row">
+     <div class="col-md-6 col-md-offset-3">
+         <h4>Forecast by City</h4>
+         <div class="form-group">
+             <input type="text" ng-model="city" class="form-control">
+             <br>
+             <h4>Number of Days</h4>
+             <select class="form-control" ng-model="day">
+                 <!--<option value="i" ng-repeat="i in days">{{i}}</option>-->
+                 <option value="1" >1</option>
+                 <option value="2" >2</option>
+                 <option value="3" >3</option>
+                 <option value="4" >4</option>
+                 <option value="5" >5</option>
+                 <option value="6" >6</option>
+                 <option value="7" >7</option>
+             </select>
+         </div>
+         <br>
+         <a href="#/forecast" class="btn btn-primary">Get Forecast</a>
+     </div>
+</div>
