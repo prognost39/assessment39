@@ -1,14 +1,21 @@
 Forecast for {{city}}
-
+<br>
 <div ng-repeat="w in weatherResult.list">
     <div class="row">
         <div class="col-md-12">
             <div class="panel panel-default">
                 <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-md-6">
                     <h3 class="panel-title">{{w.dt*1000 | date}}</h3>
+                        </div>
+                        <div class="col-md-6" style="text-align: right">
+                            <h3 class="panel-title">{{w.weather[0].description | uppercase}}</h3>
+                        </div>
+                    </div>
                 </div>
                 <div class="panel-body">
-                    Daytime Temperature : {{w.temp.day }} C
+                    Daytime Temperature : {{w.temp.day }} C  |  Max : {{w.temp.max}} C  |  Min : {{w.temp.min}} C  | Humidity : {{w.humidity}} %  |  Rain : {{w.rain}} mm  | Wind : {{w.speed}} m/s
                 </div>
             </div>
         </div>

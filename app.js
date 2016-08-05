@@ -21,9 +21,9 @@ app.config(function ($routeProvider) {
 //Services
 app.service('cityService',function () {
 
-    this.city="Kolkata, WB";
+    this.city="";
     this.days=[1,2,3,4,5,6,7];
-    this.day=3;
+    this.day=2;
 });
 
 
@@ -33,9 +33,15 @@ app.controller('homeController',['$scope','cityService',function ($scope,citySer
     $scope.city=cityService.city;
     $scope.days=cityService.days;
     $scope.day=cityService.day;
-    $scope.$watch('city','days','day',function () {
+    $scope.$watch('city',function () {
        cityService.city=$scope.city;
+    });
+
+    $scope.$watch('days',function () {
         cityService.days=$scope.days;
+    });
+
+    $scope.$watch('day',function () {
         cityService.day=$scope.day;
     });
 
