@@ -3,11 +3,18 @@
  */
 
 //Controllers
-app.controller('homeController',['$scope','cityService',function ($scope,cityService) {
+app.controller('homeController',['$scope','$location','cityService',function ($scope,$location,cityService) {
 
     $scope.city=cityService.city;
     $scope.days=cityService.days;
     $scope.day=cityService.day;
+
+    $scope.submit = function () {
+
+        $location.path("/forecast");
+
+    };
+
     $scope.$watch('city',function () {
         cityService.city=$scope.city;
     });
