@@ -27,9 +27,22 @@ app.controller('homeController',['$scope','$location','cityService',function ($s
         cityService.day=$scope.day;
     });
 
+
+
+
+
 }]);
 
 app.controller('forecastController',['$scope','$resource','cityService',function ($scope,$resource,cityService) {
+
+    var convert=function () {
+        var com=0
+        com=(cityService.city).indexOf(",");
+        var query=(cityService.city).slice(0,com);
+        console.log(query);
+        return query;
+
+    };
 
     $scope.city=cityService.city;
     $scope.days=cityService.days;
@@ -40,15 +53,17 @@ app.controller('forecastController',['$scope','$resource','cityService',function
             method:"JSONP"
         }
     });
+
     $scope.weatherResult = $scope.weatherAPI.get(
         {
-            q:$scope.city,
+            q:convert(),
             units:'metric',
             cnt:$scope.day,
             APPID:'4368307ca81118f1e7f28256589c0e60'
         }
     );
-
+    query="";
+    com=0;
     console.log($scope.weatherResult);
 
 
