@@ -1,4 +1,6 @@
-Forecast for {{city}}
+<p ng-controller="forecastController">
+    Forecast for {{city.formatted_address}}
+</p>
 <br>
 <div ng-repeat="w in weatherResult.list">
     <div class="row">

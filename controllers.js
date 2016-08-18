@@ -35,14 +35,7 @@ app.controller('homeController',['$scope','$location','cityService',function ($s
 
 app.controller('forecastController',['$scope','$resource','cityService',function ($scope,$resource,cityService) {
 
-    var convert=function (test) {
-        var com=0;
-        com=(test).indexOf(",");
-        var query=(test).slice(0,com);
-        console.log(query);
-        return query;
 
-    };
 
     $scope.city=cityService.city;
     $scope.days=cityService.days;
@@ -56,14 +49,14 @@ app.controller('forecastController',['$scope','$resource','cityService',function
 
     $scope.weatherResult = $scope.weatherAPI.get(
         {
-            q:convert($scope.city),
+            q:cityService.convert(),
             units:'metric',
             cnt:$scope.day,
             APPID:'4368307ca81118f1e7f28256589c0e60'
         }
     );
-    query="";
-    com=0;
+    //query="";
+    //com=0;
     console.log($scope.weatherResult);
 
 
