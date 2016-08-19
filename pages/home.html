@@ -3,7 +3,7 @@
          <h4>Forecast by City</h4>
          <form ng-submit="submit()">
              <div class="form-group">
-                 <input type="text" ng-model="city" class="form-control" id="c"  placeholder="Kolkata, WB" g-places-autocomplete>
+                 <input type="text" autocomplete="off" ng-model="city" class="form-control" id="c"  placeholder="Kolkata, WB" g-places-autocomplete>
                  <br>
                  <h4>Number of Days</h4>
                  <select class="form-control" ng-model="day" ng-options="i for i in days">
